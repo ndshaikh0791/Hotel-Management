@@ -1,0 +1,126 @@
+.clockContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, var(--white) 0%, rgba(212, 175, 55, 0.03) 100%);
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.analogClock {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 
+    0 0 0 8px rgba(26, 71, 42, 0.1),
+    inset 0 2px 8px rgba(0, 0, 0, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 10px;
+}
+
+.hour {
+  width: 6px;
+  height: 20px;
+  margin-left: -3px;
+  background: var(--white);
+  opacity: 0.9;
+}
+
+.minute {
+  width: 4px;
+  height: 28px;
+  margin-left: -2px;
+  background: var(--white);
+  opacity: 0.8;
+}
+
+.second {
+  width: 2px;
+  height: 32px;
+  margin-left: -1px;
+  background: var(--accent);
+  opacity: 0.9;
+}
+
+.center {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--white);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.digitalTime {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.time {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+.date {
+  font-size: 12px;
+  color: var(--neutral-500);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 640px) {
+  .clockContainer {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .analogClock {
+    width: 60px;
+    height: 60px;
+  }
+
+  .hour {
+    height: 15px;
+  }
+
+  .minute {
+    height: 22px;
+  }
+
+  .second {
+    height: 26px;
+  }
+
+  .center {
+    width: 8px;
+    height: 8px;
+  }
+
+  .time {
+    font-size: 18px;
+  }
+
+  .date {
+    font-size: 11px;
+  }
+}
